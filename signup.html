@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Sign Up</title>
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffedd8; 
+      color: #f3d5b5;
+            background-image: url("https://i.pinimg.com/1200x/32/66/cd/3266cd78e60dc5e3bf48459ccd8651a8.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+    }
+    form {
+      background: #ba8a5c;
+      padding: 20px;
+      margin: 50px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(62, 39, 35, 0.5);
+      color: #fffff4;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #340100;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #78400f;
+      color: #fffff4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #78400f;
+    }
+    </style>
+</head>
+<body>
+    <form id="signupForm">
+    <h2 class="text-center">Sign Up</h2>
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button type="submit">Submit</button>
+  </form>
+
+    <script>
+      $("input").focus(function(){
+      $(this).css("background-color", "#e6f4d7");
+    });
+    $("input").blur(function(){
+      $(this).css("background-color", "white");
+    });
+
+    $("#signupForm").submit(function(event){
+      event.preventDefault();
+
+      let name = $("#name").val();
+      let email = $("#email").val();
+      let username = $("#username").val();
+      let password = $("#password").val();
+
+      if(name === "" || email === "" || username === "" || password === ""){
+        alert("⚠️ Please fill out all fields.");
+      } else {
+        alert("🎉 Signup successful! Welcome, " + username);
+      }
+    });
+    </script>
+
+</body>
+</html>
